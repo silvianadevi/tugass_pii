@@ -58,6 +58,7 @@ class CobaController extends Controller
 
     public function show($id)
     {
+
         $friends = friends::where('id', $id)->first();
         return view('friends.show', ['friend'=> $friends]);
     }

@@ -1,8 +1,7 @@
 <?php
-
+use App\Http\Controllers\GroupsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CobaController;
-use App\Http\Controllers\GroupsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +36,11 @@ Route::get('', [CobaController::class, 'index']);
 // Route::put('/friends/{id}', [CobaController::class, 'update']);
 // Route::delete('/friends/{id}', [CobaController::class, 'destroy']);
 
-
 Route::resources([
     'friends' => CobaController::class,
     'groups' => GroupsController::class,
 ]);
+
 Route::get('/groups/addmember/{group}', [GroupsController::class, 'addmember']);
 Route::put('/groups/addmember/{group}', [GroupsController::class, 'updateaddmember']);
 Route::put('/groups/deleteaddmember/{group}', [GroupsController::class, 'deleteaddmember']);
